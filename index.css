@@ -231,10 +231,117 @@ unlike display:hidden property */
 /* components */
 
 .large-button {
+  position: relative;
+  z-index: 1;
   padding: 0 2em;
   place-items: center; /*it centers grid items */
   display: grid;
   text-decoration: none;
   border-radius: 50%;
   aspect-ratio: 1; /*generates a perfect square which can be rounded to get a perfect circle*/
+}
+
+.large-button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: hsl(var(--clr-white) / 0.15);
+  opacity: 0;
+  transition: opacity 500ms linear, transform 750ms ease-in-out;
+}
+
+.large-button:hover::after,
+.large-button:focus::after {
+  opacity: 1;
+  transform: scale(1.5);
+}
+
+.primary-navigation {
+  --gap: 8rem;
+  --underline-gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-navigation a {
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+/* every direct decendant of underline-indicators */
+.underline-indicators > * {
+  cursor: pointer;
+  padding: var(--underline-gap, 1rem) 0;
+  border: 0;
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+}
+
+.underline-indicators > .active,
+.underline-indicators > [aria-selected="true"] {
+  color: hsl(var(--clr-white) / 1);
+  border-color: hsl(var(--clr-white) / 1);
+}
+
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
+  border-color: hsl(var(--clr-white) / 0.5);
+}
+
+.tab-list {
+  --gap: 2rem;
+}
+
+.dot-indicators {
+  margin-left: 5rem;
+}
+
+.dot-indicators > * {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: 0.5em;
+  background-color: hsl(var(--clr-white) / 0.25);
+}
+
+.dot-indicators > *:hover,
+.dot-indicators > *:focus {
+  background-color: hsl(var(--clr-white) / 0.5);
+}
+
+.dot-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white) / 1);
+}
+
+.numbers-indicators {
+  margin-left: 5rem;
+}
+
+.numbers-indicators > * {
+  cursor: pointer;
+  display: block;
+  --flow-space: 1rem;
+
+  border: 0.1rem solid hsl(var(--clr-white) / 0.25);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.numbers-indicators > *:hover,
+.numbers-indicators > *:focus {
+  border-color: hsl(var(--clr-white) / 0.5);
+}
+
+.numbers-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white) / 1);
+  color: hsl(var(--clr-dark));
 }
