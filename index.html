@@ -13,8 +13,10 @@
     <!-- custom style -->
     <link rel="stylesheet" href="index.css" />
     <title>Space Tourism Website</title>
+    <script src="index.js" defer></script>
   </head>
   <body class="home">
+    <a class="skip-to-content" href="#main">Skip to content</a>
     <header class="primary-header flex">
       <div class="#">
         <img
@@ -24,14 +26,22 @@
         />
       </div>
 
-      <!-- <nav>
-        <ul class="primary-navigation underline-indicators flex">
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
+
+      <nav>
+        <ul
+          id="primary-navigation"
+          data-visible="false"
+          class="primary-navigation underline-indicators flex"
+        >
           <li class="active">
             <a
               class="uppercase text-white letter-spacing-2 ff-sans-cond"
               href="index.html"
             >
-              <span>00</span> Home</a
+              <span aria-hidden="true">00</span> Home</a
             >
           </li>
           <li>
@@ -39,7 +49,7 @@
               class="uppercase text-white letter-spacing-2 ff-sans-cond"
               href="destination.html"
             >
-              <span>01</span> Destination</a
+              <span aria-hidden="true">01</span> Destination</a
             >
           </li>
           <li>
@@ -47,7 +57,7 @@
               class="uppercase text-white letter-spacing-2 ff-sans-cond"
               href="crew.html"
             >
-              <span>02</span> Crew
+              <span aria-hidden="true">02</span> Crew
             </a>
           </li>
           <li>
@@ -55,14 +65,14 @@
               class="uppercase text-white letter-spacing-2 ff-sans-cond"
               href="technology.html"
             >
-              <span>03</span> Technology
+              <span aria-hidden="true">03</span> Technology
             </a>
           </li>
         </ul>
-      </nav> -->
+      </nav>
     </header>
 
-    <div class="grid-container grid-container--home">
+    <main id="main" class="grid-container grid-container--home">
       <div>
         <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
           So, you want to travel to
@@ -82,6 +92,6 @@
           >Explore</a
         >
       </div>
-    </div>
+    </main>
   </body>
 </html>
