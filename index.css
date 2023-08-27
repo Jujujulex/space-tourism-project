@@ -339,7 +339,7 @@ general css
 }
 .primary-navigation {
   --gap: clamp(1.5rem, 5vw, 3.5rem);
-  --underline-gap: 2rem;
+  --underline-gap: 1.5rem;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -781,6 +781,7 @@ media queries
   .grid-container--crew picture > img {
     align-self: end;
     max-width: 80%;
+    object-fit: contain;
   }
 
   .grid-container--crew > .dot-list {
@@ -947,8 +948,7 @@ media queries
         0.3fr
       );
   }
-  .grid-container--destination > picture,
-  img {
+  .grid-container--destination > picture img {
     max-width: 100%;
     margin-top: 5rem;
   }
@@ -976,6 +976,11 @@ media queries
       ". tabs image .";
   }
 
+  .grid-container--crew > article {
+    justify-self: start;
+    margin-left: 6rem;
+  }
+
   .grid-container--crew > .crew-details {
     margin-top: 10rem;
   }
@@ -984,17 +989,24 @@ media queries
     margin-top: 1.5rem;
   }
 
+  .crew-details .paragraph {
+    font-size: 1.3rem;
+    line-height: 1.7;
+  }
+
   .grid-container--crew > .dot-list {
     margin-bottom: 2rem;
     margin-top: -6rem;
+    justify-self: start;
+    margin-left: 6rem;
   }
 
   .grid-container--crew > picture,
   img {
     align-self: end;
     max-width: 100%;
-    height: 100%;
-    margin-top: 4rem;
+    /* height: 100%; */
+    /* margin-top: 4rem; */
     overflow-y: hidden;
     grid-column: span 2;
   }
@@ -1018,7 +1030,7 @@ media queries
   .grid-container--technology picture {
     position: relative;
     right: -12rem;
-    width: 70%;
+    width: 60%;
   }
 
   .grid-container--technology picture > img {
