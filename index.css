@@ -349,7 +349,7 @@ general css
 
 .primary-navigation a {
   text-decoration: none;
-  /* display: flex; */
+  display: flex;
 }
 
 .primary-navigation a > span {
